@@ -1,7 +1,7 @@
 
 import '.././globals.css';
 
-import Loader from "@/Components/Loader";
+import Loader from '../../Components/Loader';
 import { ClerkLoaded, ClerkLoading, ClerkProvider } from "@clerk/nextjs";
 
 export const metadata = {

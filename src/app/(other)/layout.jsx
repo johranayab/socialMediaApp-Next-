@@ -1,9 +1,9 @@
 import localFont from "next/font/local";
 import ".././globals.css";
-import LeftSidebar from "@/Components/LeftSidebar";
-import RightSidebar from "@/Components/RightSidebar";
+import LeftSidebar from "../../Components/LeftSidebar";
+import RightSidebar from "../../Components/RightSidebar";
 import { ClerkProvider, ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
-import Loader from "@/Components/Loader";
+import Loader from "../../Components/Loader";
 
 const geistSans = localFont({
   src: ".././fonts/GeistVF.woff",
@@ -32,17 +32,15 @@ export default function RootLayout({ children }) {
             <Loader />
           </ClerkLoading>
           <ClerkLoaded>
-
-          
-          <div className="flex justify-between max-w-6xl mx-auto">
-            <div className="hidden sm:inline border-r h-screen sticky top-0 ">
-              <LeftSidebar />
+            <div className="flex justify-between max-w-6xl mx-auto">
+              <div className="hidden sm:inline border-r h-screen sticky top-0 ">
+                <LeftSidebar />
+              </div>
+              <div className="w-2xl flex-1 "> {children}</div>
+              <div className="lg:flex-col p-3 h-screen border-l  hidden lg:flex w-[24rem] ">
+                <RightSidebar />
+              </div>
             </div>
-            <div className="w-2xl flex-1 "> {children}</div>
-            <div className="lg:flex-col p-3 h-screen border-l  hidden lg:flex w-[24rem] ">
-              <RightSidebar />
-            </div>
-          </div>
           </ClerkLoaded>
         </body>
       </html>
